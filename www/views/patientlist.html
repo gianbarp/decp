@@ -1,0 +1,24 @@
+<div id="patient-list">
+    <patient-list></patient-list>
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+              <form class="col s12" role="form">  
+                <div class="card-content">
+                  <p>Enviar un mensaje a la comunidad de Médicos de Doctorencasa</p>
+                  <br>
+                      <div class="row">
+                        <div style="padding: 0;" class="input-field col s12">
+                          <textarea id="textarea1" name="msg" ng-model="model.msg" class="materialize-textarea"></textarea>
+                          <label for="textarea1">Escribir mensaje aquí</label>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-action">
+                    <span ng-click="sendMedicalMsg()">Enviar mensaje <i class="material-icons right">send</i></span>
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<a ng-click="embedchat(user_id)" href="#modal1" class="modal-trigger row col s12">
+    <div class="chatlist patient-active col s12">
+        <div class="chat clearfix clear">
+            <div class="chat-avatar">
+                <div class="avatar icon-user-default">
+                    <img style="width: 100%;" src="https://doctorencasa.co/uploads/{{avatar}}" />
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-main">
+                    <div class="chat-title">
+                        <span class="emojitext ellipsify" title="{{fullname}}">Dr. {{fullname}}</span>
+                    </div>
+                    <div class="chat-meta">
+                        <span class="chat-time">Doctor asignado</span>
+                    </div>
+                </div>
+                <div class="chat-secondary">
+                    <div class="chat-status">
+                        <span class="emojitext ellipsify" dir="ltr">
+                            <last-message userid="{{user_id}}"></last-message>
+                            Presione para chatear
+                        </span><br><br>
+                        <span class="blue darken-1 btn waves-effect waves-light">Chatear
+                         <i class="material-icons right">send</i></span>
+                    </div>
+                    <div class="chat-meta"></div>  
+                </div>  
+            </div>
+        </div>
+    </div>
+</a>

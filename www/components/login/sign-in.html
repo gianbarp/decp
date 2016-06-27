@@ -1,0 +1,23 @@
+<div class="row">
+<form role="form" class="col s12">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input ng-model="model.email" id="email" type="email" class="validate">
+      <label for="email">Email</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input ng-model="model.password" id="password" type="password" class="validate">
+      <label for="password">Contraseña</label>
+    </div>
+  </div>
+    
+  <button ng-click="authenticate()" class="btn waves-effect waves-light blue darken-1" type="submit" name="action">Ingresar
+    <i class="material-icons right">send</i>
+  </button>
+
+</form>
+</div>
