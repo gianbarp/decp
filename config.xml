@@ -30,26 +30,27 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <icon src="icon.svg" />
+    <icon src="icon.png" />
+    <splash src="screen.png" />
     <platform name="android">
-        <icon density="ldpi" src="res/icon/icon.svg" />
-        <icon density="mdpi" src="res/icon/icon.svg" />
-        <icon density="hdpi" src="res/icon/icon.svg" />
-        <icon density="xhdpi" src="res/icon/icon.svg" />
-        <icon density="xxhdpi" src="res/icon/icon.svg" />
-        <icon density="xxxhdpi" src="res/icon/icon.svg" />
-        <splash density="land-ldpi" src="res/screen/screen.svg" />
-        <splash density="land-mdpi" src="res/screen/screen.svg" />
-        <splash density="land-hdpi" src="res/screen/screen.svg" />
-        <splash density="land-xhdpi" src="res/screen/screen.svg" />
-        <splash density="land-xxhdpi" src="res/screen/screen.svg" />
-        <splash density="land-xxxhdpi" src="res/screen/screen.svg" />
-        <splash density="port-ldpi" src="res/screen/screen.svg" />
-        <splash density="port-mdpi" src="res/screen/screen.svg" />
-        <splash density="port-hdpi" src="res/screen/screen.svg" />
-        <splash density="port-xhdpi" src="res/screen/screen.svg" />
-        <splash density="port-xxhdpi" src="res/screen/screen.svg" />
-        <splash density="port-xxxhdpi" src="res/screen/screen.svg" />
+        <icon density="ldpi" src="res/icon/icon.png" />
+        <icon density="mdpi" src="res/icon/icon.png" />
+        <icon density="hdpi" src="res/icon/icon.png" />
+        <icon density="xhdpi" src="res/icon/icon.png" />
+        <icon density="xxhdpi" src="res/icon/icon.png" />
+        <icon density="xxxhdpi" src="res/icon/icon.png" />
+        <splash density="land-ldpi" src="res/screen/screen.png" />
+        <splash density="land-mdpi" src="res/screen/screen.png" />
+        <splash density="land-hdpi" src="res/screen/screen.png" />
+        <splash density="land-xhdpi" src="res/screen/screen.png" />
+        <splash density="land-xxhdpi" src="res/screen/screen.png" />
+        <splash density="land-xxxhdpi" src="res/screen/screen.png" />
+        <splash density="port-ldpi" src="res/screen/screen.png" />
+        <splash density="port-mdpi" src="res/screen/screen.png" />
+        <splash density="port-hdpi" src="res/screen/screen.png" />
+        <splash density="port-xhdpi" src="res/screen/screen.png" />
+        <splash density="port-xxhdpi" src="res/screen/screen.png" />
+        <splash density="port-xxxhdpi" src="res/screen/screen.png" />
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
