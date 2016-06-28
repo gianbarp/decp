@@ -291,3 +291,6 @@ body{
 .card-action span{
     color:#039BE5 !important;
 }
+#message-list li{
+    display: inline-table !important;
+}

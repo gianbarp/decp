@@ -101,7 +101,7 @@ angular.module('app').directive('messageList', function($rootScope, $anchorScrol
                     duration: 2000
                  });
             };  
-
+            
             rest.get("doctorid="+DOCTOR_ID).success(function(record){
                  
                  $('#patientinfomadal').openModal();

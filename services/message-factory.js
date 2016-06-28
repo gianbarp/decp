@@ -159,6 +159,24 @@ angular.module('app')
     return self.messagesAllFetched;
 
   };
+  
+  var sendWithImage = function(imgURL) {
+      // Don't send an empty message 
+      if (_.isEmpty(imgURL))
+          return;
+
+      PubNub.ngPublish({
+          channel: 'messages-channel'+DOCTOR_ID,
+          message: {
+              uuid: USER_NAME + "##" + USER_AVATAR,
+              message: imgURL,
+              image: true,
+              user_id: USER_ID,
+              sender_uuid: USER_NAME + "##" + USER_AVATAR,
+              date: Date.now()
+          },
+      });
+  }
 
   var sendMessage = function(messageContent) {
 
@@ -188,7 +206,8 @@ angular.module('app')
     subscribeNewMessage: subcribeNewMessage,
     fetchPreviousMessages: fetchPreviousMessages,
     messagesAllFetched : messagesAllFetched,
-    getMessagesHybrid: getMessagesHybrid
+    getMessagesHybrid: getMessagesHybrid,
+    sendWithImage: sendWithImage
   } 
 
 }]);

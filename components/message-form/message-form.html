@@ -1,24 +1,28 @@
 <div id="message-form" class="message-form">
  <form ng-submit="sendMessage()" class="container">
    <div class="row">
-     <div class="input-field col s10">
+     
+      <div class="input-field col s10">
        <i class="icon-chat large material-icons">chat</i>
        <input ng-model="messageContent" type="text" placeholder="Escriba su mensaje aquí" >
-       <!--<span class="chip left">
-          <user-avatar uuid="{{uuid}}"></user-avatar>
-          Anonymous robot #{{uuid}}
-       </span>-->
      </div>
+       
      <div class="input-field col s2">
-       <button type="submit" class="waves-effect waves-light btn-floating btn-large blue lighten-5">
+       <!--<button type="submit" class="waves-effect waves-light btn-floating btn-large blue lighten-5">
          <i class="icon-send-chat material-icons right">send</i>
-       </button>
+       </button>-->
+       <div ng-click="takePicture()" id="take-picture">
+           <i class="material-icons medium">picture_in_picture</i>
+       </div>
      </div>
+       
    </div>
   </form>
+    
   <div id="patientinfomadal" class="modal modal-fixed-footer">
     <div class="modal-content">
       
     </div>
   </div>
+    
 </div>
