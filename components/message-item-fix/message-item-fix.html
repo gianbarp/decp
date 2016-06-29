@@ -1,6 +1,10 @@
 <div class="col s12">
     <user-avatar uuid="{{avatar}}"></user-avatar>
-    <span class="title">{{user_sender_id}}</span>
-    <p class="date-chat"><i class="prefix mdi-action-alarm"></i> {{ user_date | date:"MM/dd/yyyy '-' h:mma"}}</p>
-    <p>{{user_content}}</p>
+    <span class="title">{{user_sender_id}}</span><br>
+    <div class="tail message-in message-chat">
+        <div class="bubble bubble-item">
+            <div class="message-text">{{user_content}}</div>
+            <div class="message-meta">{{ user_date | date:"h:mma"}}</div>
+        </div>
+    </div>
 </div>

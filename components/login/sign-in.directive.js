@@ -33,6 +33,11 @@ angular.module('app').directive('signIn', function() {
                     USER_AVATAR = window.localStorage.getItem('_avatar', data.avatar);
                     
                     window.location.href = '#/patientlist';
+                }else{
+                    ngNotify.set('Error de autenticación.', {
+                        type: 'error',
+                        duration: 3000
+                     });
                 }
             }).error(errorCallback);
       

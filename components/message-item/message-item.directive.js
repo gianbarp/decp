@@ -14,7 +14,7 @@ angular.module('app').directive('messageItem', function(MessageService) {
       $scope.user_sender_id = nameImg[0];
       $scope.user_date = JSON.parse($scope.content).message.date;
       $scope.avatar = nameImg[1];
-      
+      $scope.doctor_in = (JSON.parse($scope.content).message.doctor_in) ? JSON.parse($scope.content).message.doctor_in : '';
     }
     
   };
