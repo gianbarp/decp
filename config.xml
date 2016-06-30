@@ -10,7 +10,7 @@
     <content src="index.html" />
     <preference name="StatusBarBackgroundColor" value="#1E88E5" />
     <preference name="BackgroundColor" value="0xff0000ff"/>
-    <preference name="fullscreen" value="true"/>
+    <preference name="Fullscreen" value="false"/>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="SplashScreen" value="splash" />
