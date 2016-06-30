@@ -9,14 +9,13 @@
     </author>
     <content src="index.html" />
     <preference name="StatusBarBackgroundColor" value="#1E88E5" />
-    <preference name="Fullscreen" value="false"/>
-    <preference name="ShowTitle" value="false"/>
+    <preference name="BackgroundColor" value="0xff0000ff"/>
+    <preference name="fullscreen" value="true"/>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="BackgroundColor" value="0xffffffff" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
@@ -38,7 +37,7 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <icon src="icon.png" />
-    <splash src="splash.png" />
+    <splash src="screen.png" />
     <platform name="android">
         <icon density="ldpi" src="res/icon/icon.png" />
         <icon density="mdpi" src="res/icon/icon.png" />

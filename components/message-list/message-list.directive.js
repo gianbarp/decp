@@ -103,10 +103,10 @@ angular.module('app').directive('messageList', function($rootScope, $anchorScrol
             };  
             
             rest.get("doctorid="+DOCTOR_ID).success(function(record){
-                 
-                 $('#patientinfomadal').openModal();
+                
                  var el = $compile('<medical-record slogan="'+record.slogan+'" description="'+record.description+'" experience="'+record.job_experience+'"></medical-record>')($scope);
-                 $("#patientinfomadal .modal-content").append(el);
+                 $("#doctormodalinfo .modal-content").append(el);
+                 $('#doctormodalinfo').openModal();
                  
             }).error(errorCallback);
           

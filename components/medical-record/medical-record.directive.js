@@ -17,7 +17,7 @@ angular.module('app').directive('medicalRecord', function() {
         $scope.user_experience = $scope.experience;
         
         $scope.medicalRecordClose = function(){
-            $('#patientinfomadal').closeModal();
+            $('#doctormodalinfo').closeModal();
         }
     
     }
