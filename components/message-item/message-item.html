@@ -4,6 +4,7 @@
     <div class="tail message-in message-chat">
         <div class="bubble bubble-item">
             <div class="message-text">{{user_content}}</div>
+            <p ng-if="img_indicator" style="width: 20%;"><img src="{{receive_image}}" style="width: 100%;" /></p>
             <div class="message-meta">{{ user_date | date:"h:mma"}}</div>
         </div>
     </div>

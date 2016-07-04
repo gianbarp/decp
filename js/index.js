@@ -49,6 +49,40 @@ var Doctorencasapp = {
             });
         })
         Doctorencasapp.receivedEvent('deviceready');
+        Doctorencasapp.setupPush();
+    },
+    
+    setupPush: function() {
+        
+        var push = PushNotification.init({
+            "android": {
+                "senderID": "111979180806"
+            },
+            "ios": {
+                "sound": true,
+                "vibration": true,
+                "badge": true
+            },
+            "windows": {}
+        });
+        
+        push.on('registration', function(data) {
+            console.log(data.registrationId);
+        });
+
+        push.on('error', function(e) {
+            console.log("push error = " + e.message);
+        });
+
+        push.on('notification', function(data) {
+            console.log('notification event');
+            navigator.notification.alert(
+                data.message,         // message
+                null,                 // callback
+                data.title,           // title
+                'Ok'                  // buttonName
+            );
+       });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

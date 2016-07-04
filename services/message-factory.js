@@ -4,8 +4,9 @@ angular.module('app')
   
   // Aliasing this by self so we can access to this trough self in the inner functions
   var self = this;
-  this.messages = []
+  this.messages = [];
   this.channel = 'messages-channel'+USER_ID;
+  this.hybrid = 'hybrid-'+USER_ID+'-';
 
   // We keep track of the timetoken of the first message of the array
   // so it will be easier to fetch the previous messages later
@@ -31,6 +32,13 @@ angular.module('app')
       
       PubNub.ngSubscribe({
           channel: self.channel,
+          disconnect : whenDisconnected, 
+          reconnect : whenReconnected,
+          triggerEvents: ['callback']
+      });
+      
+      PubNub.ngSubscribe({
+          channel: self.hybrid,
           disconnect : whenDisconnected, 
           reconnect : whenReconnected,
           triggerEvents: ['callback']
@@ -76,7 +84,7 @@ angular.module('app')
     var defaultMessagesNumber = 20;
 
     PubNub.ngHistory({
-     channel: self.channel,
+     channel: self.hybrid,
      callback: function(m){
         // Update the timetoken of the first message
         self.timeTokenFirstMessage = m[1]
@@ -99,7 +107,7 @@ angular.module('app')
   ////////////////// PUBLIC API ////////////////////////
 
   var subcribeNewMessage = function(callback){
-    $rootScope.$on(PubNub.ngMsgEv(self.channel), callback);
+    $rootScope.$on(PubNub.ngMsgEv(self.hybrid), callback);
   };
 
 
@@ -110,7 +118,7 @@ angular.module('app')
     var deferred = $q.defer()
 
     PubNub.ngHistory({
-     channel: self.channel,
+     channel: self.hybrid,
      callback: function(m){
         // Update the timetoken of the first message
         self.timeTokenFirstMessage = m[1]
@@ -176,6 +184,18 @@ angular.module('app')
               date: Date.now()
           },
       });
+      
+      PubNub.ngPublish({
+          channel: self.hybrid,
+          message: {
+              uuid: USER_NAME + "##" + USER_AVATAR,
+              message: imgURL,
+              image: true,
+              user_id: USER_ID,
+              sender_uuid: USER_NAME + "##" + USER_AVATAR,
+              date: Date.now()
+          },
+      });
   }
 
   var sendMessage = function(messageContent) {
@@ -186,6 +206,17 @@ angular.module('app')
 
       PubNub.ngPublish({
           channel: 'messages-channel'+DOCTOR_ID,
+          message: {
+              uuid: USER_NAME + "##" + USER_AVATAR,
+              content: messageContent,
+              user_id: USER_ID,
+              sender_uuid: USER_NAME + "##" + USER_AVATAR,
+              date: Date.now()
+          },
+      });
+      
+      PubNub.ngPublish({
+          channel: self.hybrid,
           message: {
               uuid: USER_NAME + "##" + USER_AVATAR,
               content: messageContent,

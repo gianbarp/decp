@@ -12,11 +12,7 @@ angular.module('app').directive('messageForm', function($compile) {
 
       $scope.sendMessage = function(){
       	MessageService.sendMessage($scope.messageContent);
-        
-        var el = $compile('<patient-msg msg="'+$scope.messageContent+'" avatar="'+USER_AVATAR+'" ddate="'+Date.now()+'" name="'+USER_NAME+'"></patient-msg>')($scope);
-        $("#message-list").append(el);
-        
-      	$scope.messageContent = '';
+        $scope.messageContent = '';
       }
       
       $scope.takePicture = function(){
@@ -42,7 +38,7 @@ angular.module('app').directive('messageForm', function($compile) {
           
             ngNotify.set('Enviando imagen...',{
                 type: 'success',
-                duration: 10000
+                duration: 12000
              });
       
             var win = function(r){
